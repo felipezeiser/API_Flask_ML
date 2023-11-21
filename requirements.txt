@@ -22,3 +22,4 @@ SQLAlchemy==2.0.23
 threadpoolctl==3.2.0
 typing_extensions==4.8.0
 Werkzeug==3.0.1
+gunicorn==19.9.0
