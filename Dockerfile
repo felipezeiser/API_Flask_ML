@@ -1,20 +1,20 @@
-# Base Image
+# Imagem Base
 FROM continuumio/miniconda3:23.3.1-0
 
-# Set the working directory inside the container
+# Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-# Copy the requirements file first for better caching
+# Copie o arquivo de requisitos primeiro para melhor armazenamento em cache
 COPY requirements.txt /app/
 
-# Install dependencies using pip and clean up after
+# Instala todas as dependencia
 RUN pip install --no-cache-dir -r requirements.txt
 
-# # Copy the application code into the container
+# Copia o codigo da aplicação para o diretorio
 COPY . /app/
 
-# Expose the port the app runs on
+# Libera a porta 5000 para receber requisições
 EXPOSE 5000
 
-# Command to run the application with gunicorn
+# Comando para executar a aplicação
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
