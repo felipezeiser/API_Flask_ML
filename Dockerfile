@@ -17,4 +17,4 @@ COPY . /app/
 EXPOSE 5000
 
 # Comando para executar a aplicação
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--timeout", "600", "app:app"]
