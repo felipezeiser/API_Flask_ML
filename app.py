@@ -19,7 +19,7 @@ from functools import wraps
 import joblib
 import pandas as pd
 
-DB_URL = 'postgresql://postgres:s3nhas3nha@34.95.181.219:5432/API_ABEX'
+DB_URL = 'postgresql://postgres:s3nhas3nha@10.68.128.3:5432/API_ABEX'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
